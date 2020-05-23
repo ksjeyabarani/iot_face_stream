@@ -1,0 +1,2 @@
+S3_BUCKET_NAME=cloud-object-storage-h2-cos-standard-bsp
+CLOUD_HOST=169.45.115.148

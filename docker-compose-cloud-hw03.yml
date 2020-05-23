@@ -1,0 +1,29 @@
+version: "3.3"
+
+services:
+
+  mosquitto:
+    image: mosquitto
+    hostname: mosquitto
+    container_name: mosquitto
+    privileged: true
+    env_file:
+      - ./environment
+    ports:
+      - "1883:1883"
+
+  saver:
+    image: saver
+    hostname: saver
+    container_name: saver
+    privileged: true
+    env_file:
+      - ./environment
+    links:
+      - mosquitto
+    volumes:
+      - /mnt:/mnt
+
+networks:
+  default:
+
